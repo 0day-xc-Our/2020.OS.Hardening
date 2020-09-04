@@ -1,0 +1,47 @@
+{
+   dlopen
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:_dlerror_run
+   fun:dlopen@@GLIBC_2.2.5
+   ...
+}
+
+{
+   dlerror
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:vasprintf
+   fun:asprintf
+   fun:dlerror
+   ...
+}
+
+{
+   curl
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   ...
+   fun:curl_global_init
+   ...
+}
+
+{
+   dl_init
+   Memcheck:Leak
+   match-leak-kinds: all
+   ...
+   fun:_dl_init
+   ...
+}
+
+{
+   curl_multi_perform
+   Memcheck:Leak
+   match-leak-kinds: all
+   ...
+   fun:curl_multi_perform
+   ...
+}
